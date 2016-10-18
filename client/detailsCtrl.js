@@ -10,12 +10,20 @@ angular.module('bart.details', [])
 		})
 	};
 
-	$scope.getDetails = function() {
-		console.log('location: ', $location)
-		var station1 = $location.search().station1;
-		var station2 = $location.search().station2;
+	var userDetails = {};
+	$scope.user = {};
 
-		var origStn, destStn, startTime, startDate
+  	
+
+	$scope.getDetails = function(username) {
+		console.log('location: ', $location)
+		// var station1 = $location.search().station1;
+		// var station2 = $location.search().station2;
+		userDetails = userFactory.getUser(username);
+		console.log("user details ", userDetails);
+		var station1 = userDetails.station1;
+		var station2 = userDetails.station2;
+		var origStn, destStn, startTime, startDate;
 		var d = new Date();
 
 		if (d.getHours() < 10){

@@ -70,13 +70,14 @@ angular.module('bart.services', [])
 	var factory = {};
 	factory.getUser = function (username) {
 		console.log("hello")
-		var g = users.filter(function (item) {
+		var user = users.filter(function (item) {
 			console.log(item.username,username)
 			if(item.username === username) {
 				return item;
 			}
 		})
-		console.log("g  ",g);
+		console.log("user1 ", user);
+		return user;
 	}
 	return factory;
 

@@ -9,8 +9,8 @@ angular.module('bart.signin', [])
   $event.preventDefault();
   console.log("user: ", $scope.username)
     var user = userFactory.getUser($scope.username);
-    console.log('user: ', user.station1)
-     //$window.location.href = '/#/details?station1=' + user[0].station1 + "&station2=" + user[0].station2;
-     $location.path('/details?station1=' + user.station1 + "&station2=" + user.station2);
+    console.log('user: ', user)
+     $window.location.href = '/#/details?station1=' + user[0].station1 + "&station2=" + user[0].station2;
+     //$location.path('/details?station1=' + user[0].station1 + "&station2=" + user[0].station2);
   };
 })

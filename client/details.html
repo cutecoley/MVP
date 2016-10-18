@@ -1,0 +1,31 @@
+<div id='container' ng-controller='detailsController'>
+	<div class="row">
+		<div class="col-sm-4">
+				<div calss="panel bg-primary">
+				  <div class="panel-heading bg-success">BART Service Advisories</div>
+				  <div class="panel-body bg-primary">
+				  	 {{ status }} 
+				  </div>
+			  </div>
+		</div>
+		<div class="col-sm-4">
+			<div calss="panel bg-primary">
+				  <div class="panel-heading bg-success">{{commute}} {{fromStation}} to {{toStation}}</div>
+				  <div class="panel-body ">
+				  	<table class="table table-sm">
+							<thead class="bg-success">
+								<th>Start Time</th>
+									<th>End Time</th>
+									<th>Duration</th>
+								</thead>
+								<tr ng-repeat='time in schedules' class="bg-primary">
+									<td> {{time.originTime}}</td>
+									<td> {{time.destinationTime}}</td>
+									<td> {{time.duration}}</td>
+								</tr>
+							</table>
+				  	</div>
+			  	</div>		
+			</div>
+		</div>
+</div>

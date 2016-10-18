@@ -1,0 +1,24 @@
+<div id='signup' ng-controller="AuthController">
+  <h1>signup</h1>
+  <form name="signupForm" ng-submit='signup()'>
+    <input type='text' ng-model='user.username' ng-change='validPassword(user.password, user.username)'>
+    <input type="password" ng-change='validPassword(user.password, user.username)' ng-model='user.password'>
+    <div class="dropdown">
+		<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Station1
+		<span class="caret"></span></button>
+		<ul class="dropdown-menu">
+			<li  ng-repeat='station in stationList' ng-click='saveStation1(station1, )'>{{station}}</li>
+		</ul>
+  	</div>
+  	<div class="dropdown">
+		<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Station2
+				<span class="caret"></span></button>
+		<ul class="dropdown-menu">
+			<li  ng-repeat='station in stationList' ng-click='saveStation2(station2,  )'>{{station}}</li>
+		</ul>
+  	</div>
+    <button ng-disabled='isDisabled'>signup</button>
+    <h3>{{test}}</h3>
+  </form>
+  <a href="#/signin">Already have an account? <strong>Signin</strong> ...</a>
+</div>

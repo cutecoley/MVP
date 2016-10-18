@@ -64,13 +64,19 @@ angular.module('bart.services', [])
 	}
 
 	return factory;
-}).factory('userFactory', function() {
+})
+.factory('userFactory', function() {
 	var users = [{username: 'Manjula', station1: 'FRMT', station2: 'POWL'}, {username: 'John', station1: 'BAYF', station2: 'POWL'}, ]
 	var factory = {};
 	factory.getUser = function (username) {
-		return users.filter(function (item) {
-			return item.username === username;
+		console.log("hello")
+		var g = users.filter(function (item) {
+			console.log(item.username,username)
+			if(item.username === username) {
+				return item;
+			}
 		})
+		console.log("g  ",g);
 	}
 	return factory;
 

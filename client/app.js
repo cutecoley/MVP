@@ -7,10 +7,11 @@ angular.module('bart', ['bart.services','bart.details', 'bart.signin', 'ngRoute'
     })
     .when('/signin', {
       templateUrl: 'signin.html',
-      controler: 'detailsController'
+      controler: 'AuthController'
     })
     .when('/', {
-      templateUrl: 'signin.html'
+      templateUrl: 'signin.html',
+      controller: 'AuthController'
      
     })
     
